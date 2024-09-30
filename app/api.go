@@ -38,6 +38,14 @@ func (app *Application) Mount() *gin.Engine {
 		})
 	})
 
+	// Create /api/v1/users Route
+	users := v1.Group("/users")
+	users.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"users": []string{"user1", "user2", "user3"},
+		})
+	})
+
 	return router
 }
 
