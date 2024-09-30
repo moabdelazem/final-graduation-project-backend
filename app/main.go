@@ -11,5 +11,5 @@ func main() {
 		config: appConfig,
 	}
 	// Start Server
-	app.StartServer()
+	app.StartServer(app.Mount())
 }
