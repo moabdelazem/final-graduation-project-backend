@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpassword
+      POSTGRES_DB: db
+    networks:
+      - backend
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+
+networks:
+  backend:
+    driver: bridge
